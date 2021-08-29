@@ -1,3 +1,4 @@
 dataset/
 env_emo_rec/
 .idea/
+/scrappers/credentials.py
