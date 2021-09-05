@@ -28,9 +28,9 @@ def remove_links_and_tagged_accounts(filtered_output_dir):
         with open(cleared_file_abs_path, "w") as f2:
             text = re.sub(r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))", '', text, flags=re.MULTILINE)
             text = (re.sub(r"[@](.*?)[\s]", '', text, flags=re.MULTILINE))
-            text = (re.sub(r"   ", ' ', text, flags=re.MULTILINE))
-            text = (re.sub(r"  ", ' ', text, flags=re.MULTILINE))
-            f2.write(re.sub(r"  ", ' ', text, flags=re.MULTILINE))
+            for _ in range(5):
+                text = (re.sub(r"  ", ' ', text, flags=re.MULTILINE))
+            f2.write(text)
 
 
 # remove_duplicates_from_files_from_dir(summarized_outputs)
