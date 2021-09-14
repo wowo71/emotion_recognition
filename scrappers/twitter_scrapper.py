@@ -40,4 +40,11 @@ class Twitter:
 
 a = Twitter()
 # a.check_credentials()
-a.get_tweets(queried_string="surprised -\"not surprised\" filter:retweets", count=20)
+a.get_tweets(queried_string="disgust filter:retweets", count=12)
+a.get_tweets(queried_string="awful filter:retweets", count=12)
+a.get_tweets(queried_string="unpleasant filter:retweets", count=12)
+# a.get_tweets(queried_string="surprised -\"not surprised\" filter:retweets", count=30)
+# a.get_tweets(queried_string="#surprise filter:retweets", count=30)
+# a.get_tweets(queried_string="angry -\"not angry\" filter:retweets", count=30)
+# a.get_tweets(queried_string="#anger filter:retweets", count=30)
+# a.get_tweets(queried_string="#angry -\"angry bird\" -#birds -#Geronimo -#TokyoRevengers filter:retweets", count=30)

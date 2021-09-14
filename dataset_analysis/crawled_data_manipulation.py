@@ -1,8 +1,8 @@
 from os import walk
 import re
 
-summarized_outputs = "/home/wojtek/Desktop/emotion_recognition/dataset/sumarized_outputs"
-filtered_outputs = "/home/wojtek/Desktop/emotion_recognition/dataset/filtered_outputs"
+summarized_outputs = "/home/wojtek/Desktop/emotion_recognition/scrappers/3"
+filtered_outputs = "/home/wojtek/Desktop/emotion_recognition/scrappers/4"
 
 
 def remove_duplicates_from_files_from_dir(dataset_dir):
@@ -33,5 +33,5 @@ def remove_links_and_tagged_accounts(filtered_output_dir):
             f2.write(text)
 
 
-# remove_duplicates_from_files_from_dir(summarized_outputs)
-remove_links_and_tagged_accounts(filtered_outputs)
+remove_duplicates_from_files_from_dir(summarized_outputs)
+# remove_links_and_tagged_accounts(filtered_outputs)
