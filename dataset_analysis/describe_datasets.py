@@ -201,7 +201,7 @@ import pandas as pd
 # import re
 # with open("/home/wojtek/Desktop/emotion_recognition/dataset/final_dataset_v6_clear_round3_test.csv", "r") as f1:
 #     text = f1.read()
-#     pattern = re.compile('(?i)[^a-z0-9, \n]+')
+#     pattern = re.compile('(?i)[^a-z0-9 \n]+')
 # with open("/home/wojtek/Desktop/emotion_recognition/dataset/final_dataset_v6_utf_8.csv", "a") as f2:
 #     f2.write(pattern.sub('', text))
 
@@ -255,11 +255,32 @@ import pandas as pd
 #         f2.write(emotion + "," + lemmatized_sentence + "\n")
 
 #### ANALYSE DATA ####
-df = pd.read_csv("/home/wojtek/Desktop/emotion_recognition/dataset/final_dataset_v7_lemmatized_pos.csv", sep=',', error_bad_lines=False)
-print(df.count())
-df = df.drop_duplicates(subset="comment")
-print(df.count())
-print(df['emotion'].value_counts())
-df = df.groupby('emotion').head(3000)
-print(df['emotion'].value_counts())
-df.to_csv("/home/wojtek/Desktop/emotion_recognition/dataset/final_dataset_v8_top_3000.csv", sep=",", index=False)
+# df = pd.read_csv("/home/wojtek/Desktop/emotion_recognition/dataset/final_dataset_v7_lemmatized_pos.csv", sep=',', error_bad_lines=False)
+# print(df.count())
+# df = df.drop_duplicates(subset="comment")
+# print(df.count())
+# print(df['emotion'].value_counts())
+# df = df.groupby('emotion').head(3000)
+# print(df['emotion'].value_counts())
+# df.to_csv("/home/wojtek/Desktop/emotion_recognition/dataset/final_dataset_v8_top_3000.csv", sep=",", index=False)
+
+
+### OGARNIECIE LITEROWEK ###
+# df = pd.read_csv("/home/wojtek/Desktop/emotion_recognition/dataset/final_dataset_v8_top_3000.csv", sep=',', error_bad_lines=False)
+#
+# from spellchecker import SpellChecker
+#
+# spell = SpellChecker()
+#
+# def spell_check(x):
+#     correct_word = []
+#     mispelled_word = x.split()
+#     for word in mispelled_word:
+#         correct_word.append(spell.correction(word))
+#     print("dziala")
+#     return ' '.join(correct_word)
+#
+#
+# df['comment'] = df['comment'].apply(lambda x: spell_check(x))
+#
+# df.to_csv("../dataset/internet_dataset/final_dataset_v8_top_3000_spellchecked.csv", sep=",", index=False)

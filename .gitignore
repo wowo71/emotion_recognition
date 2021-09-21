@@ -1,4 +1,5 @@
 dataset/
 env_emo_rec/
+pretrained_vectors/
 .idea/
 credentials.py
