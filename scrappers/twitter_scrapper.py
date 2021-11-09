@@ -38,6 +38,6 @@ class Twitter:
                         continue
 
 
-a = Twitter()
+# a = Twitter()
 # a.check_credentials()
-a.get_tweets(queried_string="surprised -\"not surprised\" filter:retweets", count=20)
+# a.get_tweets(queried_string="disgust filter:retweets", count=12)
